@@ -1,11 +1,16 @@
-const { StatusCodes } = require("http-status-codes");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const { StatusCodes } = require("http-status-codes");
 
 const WebError = require("../utils/web.error");
 const { User } = require("../mongoose.schema/schema");
 
 const secret = process.env.SECRET;
+
+const viewLogin = async function (ctx) {
+    await ctx.render('formulario-inicio-sesion');
+};
+
 
 const login = async (ctx) => {
 
@@ -13,8 +18,6 @@ const login = async (ctx) => {
     let user;
     
     try {
-        
-
         if (!email) {
             throw new WebError('El email de usuario es requerido', StatusCodes.BAD_REQUEST)
         }
@@ -67,6 +70,7 @@ const login = async (ctx) => {
 // }
 
 module.exports = {
+    viewLogin,
     login,
     // logout,
 }

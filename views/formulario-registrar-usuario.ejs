@@ -1,0 +1,95 @@
+<%- include('./header')-%>
+    <body onload="load()">
+        <%- include('./navbar')-%>
+        <div class="container mt-3">
+            <div class="jumbotron">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-8">
+                            <h2 style="color:black mt-3;">Registro de usuario</h2>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <img  id="imagen" src="/avatares/default.png" class="float-end" width="200px" height="200px" style="border-radius: 50%;" alt="...">
+                            </div>
+                            <div class="row">
+                                <label for="avatarUsuario">Cambiar avatar</label>
+                                <input type="file" id="avatarUsuario" name="avatarUsuario" style="display: none;">
+                            </div>
+                        </div>
+                    </div>
+                <div class="form-group mt-3">
+                    <div class="row">
+                        <div class="col">Seleccione tipo de usuario</div>
+                        <div class="col">
+                            <select class="form-select" id="typeUsuario" aria-label="Default select example">
+                                <option value="cliente">Cliente</option>
+                                <option value="tienda">Tienda</option>
+                                <!-- <option value="3">Three</option> -->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="nameUsuario" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre"
+                                id="nameUsuario" name="nameUsuario" required>
+                        </div>
+                        <div class="col">
+                            <label for="lastnameUsuario" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido"
+                                id="lastnameUsuario" name="lastnameUsuario">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="edadUsuario" class="form-label">Edad</label>
+                            <input type="number" class="form-control" placeholder="18" id="edadUsuario" name="edadUsuario"
+                                aria-describedby="numberHelp" required>
+                        </div>
+
+                        <div class="col-6">
+                            <label for="phoneUsuario" class="form-label">Telefono</label>
+                            <div>
+                                <input type="tel" class="form-control" placeholder="310xxxxxxx" id="phoneUsuario" name="phoneUsuario"
+                                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="emailUsuario" class="form-label">Email</label>
+                            <input type="email" class="form-control" placeholder="ejemplo@ejemplo.com" id="emailUsuario" aria-describedby="emailHelp"
+                                name="emailUsuario" required>
+                        </div>
+                        <div class="col-6">
+                            <label for="passwordUsuario" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="passwordUsuario" name="passwordUsuario"
+                                required>
+                        </div>
+                    </div>
+                    <div class="row">                     
+                        <div class="col-6">
+                            <label for="addressUsuario" class="form-label">Dirección</label>
+                            <input type="text" class="form-control" id="addressUsuario" name="addressUsuario"
+                                placeholder="1234 Main St">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="cityUsuario" class="form-label">Ciudad</label>
+                            <input type="text" class="form-control" id="cityUsuario" name="cityUsuario">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="countryUsuario" class="form-label">Pais</label>
+                            <input type="text" class="form-control" id="countryUsuario" name="countryUsuario">
+                        </div>                        
+                    </div>
+                </div>
+                <button class="btn btn-primary mt-3 mb-5" id="registrarUsuario">Enviar Formulario</button>
+                <button class="btn btn-outline-secondary mt-3 mb-5" id="btn-inicio-sesion">Iniciar Sesión</button>
+            </div>
+        </div>
+        <script src="./javascript/set-navBar-token.js"></script>
+        <script src="./javascript/registrar-usuario.js"></script>
+    </body>
+<%- include('./pie')-%>

@@ -4,8 +4,6 @@ const { verificarCampoRequerido } = require("../utils/verificarCampoRequerido");
 
 const addProduct = async (ctx) => {
     
-    
-    
     try {
         const {email} = ctx.request.body
         const { name, price, image, amount } = ctx.request.body;
@@ -64,7 +62,7 @@ const addProduct = async (ctx) => {
         })
         await user.save() 
 
-        ctx.status = 201;
+       
           
     } catch (error) {        
         ctx.status = error.status || StatusCodes.INTERNAL_SERVER_ERROR;

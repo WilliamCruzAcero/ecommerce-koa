@@ -4,6 +4,10 @@ const { StatusCodes } = require('http-status-codes');
 const { User } = require("../mongoose.schema/schema");
 const WebError = require("../utils/web.error");
 
+const viewRegistUser = async function (ctx) {
+    await ctx.render('formulario-registrar-usuario');
+};
+
 const allUsers = async (ctx) => {
     ctx.status = 200; 
     const users = await User.find({}); 
@@ -13,7 +17,7 @@ const allUsers = async (ctx) => {
     }; 
 };
 
-const addUSer = async (ctx) => {
+const registUser = async (ctx) => {
   
     const {type, avatar, name, lastname, age, phone, email, password, address, city, country } = ctx.request.body
 
@@ -111,5 +115,6 @@ const addUSer = async (ctx) => {
 }
 module.exports = {
     allUsers,
-    addUSer,
+    registUser,
+    viewRegistUser,
 }

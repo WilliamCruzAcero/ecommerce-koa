@@ -6,6 +6,7 @@ const productRouter = new Router({
     prefix: '/product'
 });
 
+// productRouter.get('/', allProducts);
 productRouter.post('/', addProduct);
 
 module.exports = {
